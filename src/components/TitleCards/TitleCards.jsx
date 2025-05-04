@@ -18,7 +18,7 @@ const TitleCards = ({title, category}) => {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MDA2NzRlNjdlYTAzMmFlYTFhNmU5NjFlYmNjNGU4MyIsIm5iZiI6MTc0NjA3ODY1Ny4wMjQsInN1YiI6IjY4MTMwYmMxNjlhZTQ3MjBiYjVlNzA0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GV8a_Z1UieUmVSHqEZCYrEmuS_EcxCTpgMnGZZLtRsI'
+      Authorization: `Bearer ${import.meta.env.VITE_TMDB_API_TOKEN}`
     }
   };
   
@@ -33,7 +33,7 @@ const TitleCards = ({title, category}) => {
 
 
 useEffect(() => {
-  fetch(`https://api.themoviedb.org/3/movie/${category?category:"now_playing"}?language=en-US&page=1`, options)
+  fetch(`${import.meta.env.VITE_TMDB_API_URL}/${category ? category : "now_playing"}?language=en-US&page=1`, options)
   .then(res => res.json())
   .then(res => setApiData(res.results))
   .catch(err => console.error(err));
