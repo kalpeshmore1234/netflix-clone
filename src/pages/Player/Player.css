@@ -1,0 +1,42 @@
+.player{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player img{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 35px;
+    cursor: pointer;
+}
+
+.player iframe{
+    border-radius: 10px;
+}
+
+.player-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 0.9em;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 800px) {
+    .player-info p{
+         font-size: 12px;
+         margin-top: 0.7em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .player-info p{
+         font-size: 10px;
+    }
+}
